@@ -160,6 +160,7 @@ class kdl_interpreter():
 
             # Append final state at the end
             self.states.append(current_state)
+            print(len(self.states[0]),len(self.states[0][0]))
 
     def key_pressed(self, row, column):
         """Marks a given key as released and returns a tuple of actions, formatted (changed_state, led_update, display_command, press_sequence, type_str, errors)"""
@@ -171,6 +172,7 @@ class kdl_interpreter():
 
         columns = len(self.states[self.state][0])
         rows = len(self.states[self.state])
+        #print("push")
 
         if changed_state:
             [self.states[self.state][ro][col].reset() for col in range(columns) for ro in range(rows)]
@@ -181,6 +183,7 @@ class kdl_interpreter():
         """Marks a given key as released and returns a tuple of actions, formatted (changed_state, led_update, display_command, press_sequence, type_str, error)"""
         # press_sequence is sequence of key codes held until the last one is pressed
         # type_str is a sting to be pressed one key at a time
+        #print("release")
         return self.states[self.state][row][column].released()
 
     def get_color(self, row, column):
