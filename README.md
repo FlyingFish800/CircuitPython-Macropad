@@ -22,10 +22,10 @@ key (row),(col): (attribute/action), (attribute/action)
 
 where row and col are integers corresponding to a valid location on the keypad. As many attributes or actions can be specified, each seperated by commas
 
-### Attributes and Actions
+## Attributes and Actions
 Attributes and actions are not treated any different from eachother in KDL, but some keywords (attributes) are used to describe a key and how it works, while others (actions) are executed when the key is pressed. Only attributes or actions for the current state are used
 
-###Attributes:
+##Attributes:
 color (r) (g) (b)
 Defines the color a key will light up. R G and B are ints from 0 to 255, where 255 is the brightest
 
@@ -35,7 +35,7 @@ pressed - when the key is held
 always - all the time
 never - light is permanently off
 
-###Actions
+##Actions
 display (command)
 Makes the display do the specified command. Commands are
 clear - clears the display so all pixels are off
