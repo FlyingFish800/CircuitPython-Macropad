@@ -2,7 +2,7 @@ MPY_DIR = ../../../micropy/micropython/
 
 MOD = macropad
 
-SRC = macro.c
+SRC = macro.c 
 
 ARCH = armv6m
 
