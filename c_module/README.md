@@ -1,5 +1,5 @@
 # C Module exposing USB capabilities to miccropython
 
-## Building
-Build C binary for controlling USB with pico-sdk using cmake to usb.o OR .elf?
-Include and link C control binary (usb.o/elf) into micropython library and build with make?
+
+Reddit question draft:
+It feels like there are no in depth resources about how to generate mpy files. I can get the factorial example to compile and load fine, but I want to write C code to access the usb hardware since there doesn't seem to be a good way to do it otherwise. I got tinyusb to include in the project, but it complains about linker errors (LinkError: build/macro.o: undefined symbol: tusb_init) if I put it between MP_DYNRUNTIME_INIT_ENTRY and MP_DYNRUNTIME_INIT_EXIT. When I move it somewhere else, it gives a similar error (LinkError: build/tinyusb/src/common/*.o: undefined symbol: memcpy) about the memcpy function used within tinyusb. What should I do now? Is there a way I can get mpy_ld to include the pico stdlib? And is there any general resources I can use to find a way to use mpy_ld?

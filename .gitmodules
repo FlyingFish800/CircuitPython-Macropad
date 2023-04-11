@@ -1,0 +1,6 @@
+[submodule "c_module/mpy_module/tinyusb"]
+	path = c_module/mpy_module/tinyusb
+	url = https://github.com/hathach/tinyusb
+[submodule "c_module/external_module/tinyusb"]
+	path = c_module/external_module/tinyusb
+	url = https://github.com/hathach/tinyusb.git

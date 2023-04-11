@@ -1,0 +1,8 @@
+Micropython tinyusb and normal TinyUSB are different.
+Ex: mp tusb uses tu_fifo_mutex_t while normal uses osal_mutex_t
+
+tinyusb has two parts for device and host
+
+tud_init() initializes tiny usb device
+
+tud_task() lets tusb process events

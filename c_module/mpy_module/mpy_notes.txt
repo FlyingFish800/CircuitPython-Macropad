@@ -1,0 +1,51 @@
+py/dynruntime.h
+
+Standard C memory allocation functions renamed
+m_malloc()
+m_free()
+m_realloc()
+
+Printf renamed
+mp_printf()
+
+mp_obj_t is the type for all micropython objects
+
+mp_obj_new_TYPE creates a python object of that type from C type
+
+mp_obj_get_TYPE gets the C type from the python type
+
+mp_store_global(MP_QSTR_function, MP_OBJ_FROM_PTR(&function_obj))
+Adds function to the module's namespace
+
+mp_const_none
+mp_const_false/true
+Some of the constant types you can return that you don't have to create
+
+More general way to make a function:
+MP_DYNRUNTIME_MAKE_FUNCTION(function) in place of MP_OBJ_FROM_PTR
+Doesn't require any form of MP_DEFINE_CONST_FUN_OBJ to generate pointer
+function must use argument interface (mp_obj_fun_bc_t *self, size_t n_args, size_t n_kw, mp_obj_t *args)
+
+To check number of args
+mp_arg_check_num(n_args, n_kw, n_args_min, n_args_max, takes_kw)
+n_args, n_kw both passed from above function signature
+
+mp_raise_...			msg is a string
+	 NotImplementedError(msg)
+	 TypeError(msg)
+	 ValueError(msg)
+
+
+
+unknown header file
+
+MP_DEFINE_CONST_FUN_OBJ_n(function_obj, function)
+Defines a reference to the function with n inputs. Defined to
+function_obj, likely of type mp_obj_t
+
+
+
+
+Building
+
+Must #include c files. Maybe h files too?
